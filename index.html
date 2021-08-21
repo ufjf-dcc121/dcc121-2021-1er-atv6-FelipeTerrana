@@ -509,7 +509,7 @@
             }
 
             function alterarCelula(celula) {
-                console.log(celula.classList.toString());
+                let classesAnteriores = celula.classList.toString();
 
                 if(celula.classList.contains('parede')) {
                     celula.classList = [];
@@ -539,6 +539,9 @@
                     celula.classList.add('parede');
                     celula.innerHTML = '';
                 }
+
+                let classesAtuais = celula.classList.toString();
+                console.log(classesAnteriores + ' -> ' + classesAtuais);
             }
         </script>
     </body>
