@@ -510,6 +510,35 @@
 
             function alterarCelula(celula) {
                 console.log(celula.classList.toString());
+
+                if(celula.classList.contains('parede')) {
+                    celula.classList = [];
+                    celula.innerHTML = '';
+                }
+
+                else if(celula.classList.length === 0) {
+                    celula.classList.add('orc');
+                    celula.innerHTML = 'O';
+                }
+
+                else if(celula.classList.contains('orc')) {
+                    celula.classList = [];
+                    celula.classList.add('tesouro');
+
+                    if(Math.random() < 0.5) {
+                        celula.innerHTML = 'T';
+                    }
+
+                    else {
+                        celula.innerHTML = 'D';
+                    }
+                }
+
+                else if(celula.classList.contains('tesouro')) {
+                    celula.classList = [];
+                    celula.classList.add('parede');
+                    celula.innerHTML = '';
+                }
             }
         </script>
     </body>
