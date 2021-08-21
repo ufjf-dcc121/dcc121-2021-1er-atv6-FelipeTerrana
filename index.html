@@ -498,9 +498,18 @@
             const CELULAS = document.querySelectorAll('td');
 
             for(let i=0; i < CELULAS.length - 1; i++) {
-                if(CELULAS[i].classList.length === 0) {
-                    CELULAS[i].classList.add('parede');
+                let celula = CELULAS[i];
+                if(celula.classList.length === 0) {
+                    celula.classList.add('parede');
                 }
+
+                celula.addEventListener('click', function() {
+                    alterarCelula(celula)
+                });
+            }
+
+            function alterarCelula(celula) {
+                console.log(celula.classList.toString());
             }
         </script>
     </body>
