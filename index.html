@@ -496,6 +496,10 @@
 
         <script type="text/javascript">
             const CELULAS = document.querySelectorAll('td');
+
+            for(let i=0; i < CELULAS.length - 1; i++) {
+                CELULAS[i].classList.add('parede');
+            }
         </script>
     </body>
 </html>
